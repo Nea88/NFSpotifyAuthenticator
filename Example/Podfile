@@ -1,0 +1,6 @@
+use_frameworks!
+target 'NFSpotifyAuthenticator_Tests' do
+  pod 'NFSpotifyAuthenticator', :path => '../'
+  
+  
+end
