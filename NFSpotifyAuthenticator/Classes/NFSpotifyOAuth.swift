@@ -2,7 +2,7 @@
 //  NFSpotifyOAuth.swift
 //  Pods
 //
-//  Created by Neil Francis Hipona on 24/10/2016.
+//  Created by Neil Francis Hipona on 26/10/2016.
 //
 //
 
@@ -38,11 +38,11 @@ public class NFSpotifyOAuth: NSObject {
     
 }
 
+// MARK: - Requests
+
 extension NFSpotifyOAuth {
     
-    // MARK: - Requests
-    
-    fileprivate func accessTokenFromAccessCode(_ code: String, completion: ((_ accessToken: String?, _ error: Error?) -> Void)? = nil) {
+    public func accessTokenFromAccessCode(_ code: String, completion: ((_ accessToken: String?, _ tokenObject: [String: AnyObject]?, _ error: Error?) -> Void)? = nil) {
         
         guard let clientID = clientID, let clientSecret = clientSecret, let redirectURI = redirectURI else { return }
         
@@ -69,14 +69,14 @@ extension NFSpotifyOAuth {
                 }
                 
                 let accessToken = tokenObject["access_token"] as? String
-                completion?(accessToken, nil)
+                completion?(accessToken, tokenObject, nil)
             }else{
-                self.processError(responseData: tokenObject, error: response.result.error)
+                self.processError(responseData: tokenObject, error: response.result.error, completion: completion)
             }
         }
     }
     
-    public func renewAccessToken(fromRefreshToken token: String, completion: ((_ accessToken: String?, _ error: Error?) -> Void)? = nil) {
+    public func renewAccessToken(fromRefreshToken token: String, completion: ((_ accessToken: String?, _ tokenObject: [String: AnyObject]?, _ error: Error?) -> Void)? = nil) {
         
         guard let clientID = clientID, let clientSecret = clientSecret, let redirectURI = redirectURI else { return }
         
@@ -96,38 +96,37 @@ extension NFSpotifyOAuth {
                     accessTokenCreds["expiryDate"] = expiryDate as AnyObject
                 }
                 
-                let accessToken = tokenObject["access_token"] as? String
-                
                 if let key = self.userDefaultKey {
                     let archivedCreds = NSKeyedArchiver.archivedData(withRootObject: accessTokenCreds)
                     UserDefaults.standard.set(archivedCreds, forKey: key)
                     UserDefaults.standard.synchronize()
                 }
                 
-                completion?(accessToken, nil)
+                let accessToken = tokenObject["access_token"] as? String
+                completion?(accessToken, tokenObject, nil)
             }else{
-                self.processError(responseData: tokenObject, error: response.result.error)
+                self.processError(responseData: tokenObject, error: response.result.error, completion: completion)
             }
         }
     }
     
-    private func processError(responseData response: [String: AnyObject], error: Error?, completion: ((_ accessToken: String?, _ error: Error?) -> Void)? = nil) {
+    private func processError(responseData response: [String: AnyObject], error: Error?, completion: ((_ accessToken: String?, _ tokenObject: [String: AnyObject]?, _ error: Error?) -> Void)? = nil) {
         
         if let errorInfo = response["error"] as? [String: AnyObject], let code = errorInfo["code"]?.integerValue, let message = ["message"] as? String {
             
-            let error = NFSpotifyOAuth.createCustomError(withDomain: "com.nf.renew-token.spotify", code: code, errorMessage: message)
+            let error = NFSpotifyOAuth.createCustomError(code: code, errorMessage: message)
             
             print("renew access token error: \(error)")
-            completion?(nil, error)
+            completion?(nil, nil, error)
         }else if let error = error {
             
             print("renew access token error: \(error)")
-            completion?(nil, error)
+            completion?(nil, nil, error)
         }else{
-            let error = NFSpotifyOAuth.createCustomError(withDomain: "com.nf.renew-token.spotify", errorMessage: "Unknown Error")
+            let error = NFSpotifyOAuth.createCustomError(errorMessage: "Unknown Error")
             
             print("renew access token error: \(error)")
-            completion?(nil, error)
+            completion?(nil, nil, error)
         }
     }
 }
@@ -136,12 +135,12 @@ extension NFSpotifyOAuth {
     
     // MARK: - Error
     
-    class func createCustomError(withDomain domain: String, code: Int = 4776, userInfo: [AnyHashable: Any]?) -> Error {
+    public class func createCustomError(withDomain domain: String = "com.nf-spotify-o-auth.error", code: Int = 4776, userInfo: [AnyHashable: Any]?) -> Error {
         
         return NSError(domain: domain, code: code, userInfo: userInfo)
     }
     
-    class func createCustomError(withDomain domain: String, code: Int = 4776, errorMessage msg: String) -> Error {
+    public class func createCustomError(withDomain domain: String = "com.nf-spotify-o-auth.error", code: Int = 4776, errorMessage msg: String) -> Error {
         
         return NSError(domain: domain, code: code, userInfo: ["message": msg])
     }

@@ -2,7 +2,7 @@
 //  NFSpotifyLoginView.swift
 //  Pods
 //
-//  Created by Neil Francis Hipona on 24/10/2016.
+//  Created by Neil Francis Hipona on 26/10/2016.
 //
 //
 
@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import WebKit
 
-protocol NFSpotifyLoginViewDelegate: NSObjectProtocol {
+public protocol NFSpotifyLoginViewDelegate: NSObjectProtocol {
     
-    func nfSpotifyLoginView(_ view: NFSpotifyLoginView, didLoginWithTokenObject tokenObject: [String: AnyObject])
-    func nfSpotifyLoginView(_ view: NFSpotifyLoginView, didFailWithError error: Error?)
+    func spotifyLoginView(_ view: NFSpotifyLoginView, didLoginWithAccessToken aToken: String, tokenObject tObject: [String: AnyObject])
+    func spotifyLoginView(_ view: NFSpotifyLoginView, didFailWithError error: Error?)
 }
 
-class NFSpotifyLoginView: UIView {
+public class NFSpotifyLoginView: UIView {
     
     // MARK: - Declarations
     
@@ -25,7 +25,7 @@ class NFSpotifyLoginView: UIView {
     
     fileprivate var scopes: [String] = []
     
-    weak var delegate: NFSpotifyLoginViewDelegate!
+    public weak var delegate: NFSpotifyLoginViewDelegate!
     
     // MARK: - Initializers
     
@@ -34,16 +34,16 @@ class NFSpotifyLoginView: UIView {
         super.init(frame: frame)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         self.init()
         
     }
     
-    override func encode(with aCoder: NSCoder) {
+    override public func encode(with aCoder: NSCoder) {
         
     }
 
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         
     }
@@ -158,7 +158,8 @@ extension NFSpotifyLoginView {
             stateKey = "state=\(state)"
         }
         
-        let accessCodeURL = "\(NFSpotifyAutorizationCodeURL)" + urlClientId + urlResponseType + urlRedirectURI + urlScopes + stateKey
+        let dialog = show_dialog ? "show_dialog=true" : ""
+        let accessCodeURL = "\(NFSpotifyAutorizationCodeURL)" + urlClientId + urlResponseType + urlRedirectURI + urlScopes + stateKey + dialog
         
         guard let authURL = URL(string: accessCodeURL) else { return nil }
         return authURL
@@ -180,75 +181,75 @@ extension NFSpotifyLoginView {
 
 extension NFSpotifyLoginView: WKNavigationDelegate {
     
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         
         print("SpotifyAuthLoginView didCommit navigation: \(webView.url ?? nil)")
         
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         print("SpotifyAuthLoginView didFinish navigation: \(webView.url ?? nil)")
         
-//        guard let url = webView.url else {return}
-//        if let items = url.queryItems {
-//            if let code = items["code"] {
-//                print("Extracted code! \(code) --> Exchange for refresh tokens and access token")
-//                requestTokenSwapWithCode(code: code, completion: { (access_token, refresh_token, error) in
-//                    if error == nil {
-//                        if let token = access_token, let refresh = refresh_token {
-//                            self.delegate?.spotifyAuthLoginView(view: self, didProvideToken: token, withRefreshToken: refresh)
-//                        } else {
-//                            self.delegate?.spotifyAuthLoginView(view: self, failedWithError: nil)
-//                        }
-//                    } else {
-//                        self.delegate?.spotifyAuthLoginView(view: self, failedWithError: error)
-//                    }
-//                })
-//            }
-//        }
+        guard let url = webView.url else {
+            let error = NFSpotifyOAuth.createCustomError(errorMessage: "No valid address")
+            return delegate.spotifyLoginView(self, didFailWithError: error)
+        }
+        
+        NFSpotifyOAuth.shared.accessTokenFromAccessCode("access-code") { (accessToken, tokenObject, error) in
+            
+            if let accessToken = accessToken, let tokenObject = tokenObject {
+                self.delegate.spotifyLoginView(self, didLoginWithAccessToken: accessToken, tokenObject: tokenObject)
+            }else if let error = error {
+                self.delegate.spotifyLoginView(self, didFailWithError: error)
+            }else{
+                let error = NFSpotifyOAuth.createCustomError(errorMessage: "Unkown error")
+                self.delegate.spotifyLoginView(self, didFailWithError: error)
+            }
+        }
     }
     
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         
         print("SpotifyAuthLoginView didFail navigation: \(webView.url ?? nil) -- error: \(error)")
         
+        delegate.spotifyLoginView(self, didFailWithError: error)
     }
     
-    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+    public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         
         print("SpotifyAuthLoginView webViewWebContentProcessDidTerminate: \(webView.url ?? nil)")
     }
     
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         
         print("SpotifyAuthLoginView didReceiveServerRedirectForProvisionalNavigation navigation: \(webView.url ?? nil)")
         
     }
     
-    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
         
         print("SpotifyAuthLoginView didReceiveServerRedirectForProvisionalNavigation navigation: \(webView.url ?? nil)")
     }
     
-    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    public func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         
         print("SpotifyAuthLoginView didReceive challenge")
         let credential = URLCredential(user: "", password: "", persistence: .forSession)
         completionHandler(URLSession.AuthChallengeDisposition.useCredential, credential)
     }
     
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
         decisionHandler(.allow)
     }
     
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
         decisionHandler(.allow)
     }
     
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         
         print("SpotifyAuthLoginView didFailProvisionalNavigation: \(webView.url ?? nil), error: \(error)")
     }

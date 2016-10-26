@@ -2,13 +2,14 @@
 //  NFSpotifyProfile.swift
 //  Pods
 //
-//  Created by Neil Francis Hipona on 25/10/2016.
+//  Created by Neil Francis Hipona on 26/10/2016.
 //
 //
 
 import Foundation
+import Alamofire
 
-class NFSpotifyProfile: NSObject, NSCoding {
+open class NFSpotifyProfile: NSObject, NSCoding {
     
     static let me = NFSpotifyProfile()
     
@@ -26,6 +27,8 @@ class NFSpotifyProfile: NSObject, NSCoding {
     var type: String!
     var uri: String!
     
+    var profileCacheKey: String!
+    
     // MARK: - Initializers
     
     private
@@ -33,13 +36,13 @@ class NFSpotifyProfile: NSObject, NSCoding {
         super.init()
     }
     
-    convenience init(profileInfo: [String: AnyObject]) {
+    convenience public init(profileInfo: [String: AnyObject]) {
         self.init()
         
         updateProfile(info: profileInfo)
     }
     
-    required convenience init?(coder aDecoder: NSCoder) {
+    required convenience public init?(coder aDecoder: NSCoder) {
         guard let i = aDecoder.decodeObject(forKey: "id") as? String else { return nil }
         
         let me = NFSpotifyProfile.me
@@ -67,7 +70,7 @@ class NFSpotifyProfile: NSObject, NSCoding {
     }
     
     
-    func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         
         let me = NFSpotifyProfile.me
         
@@ -90,7 +93,7 @@ extension NFSpotifyProfile {
     
     // MARK: - Controls
     
-    func updateProfile(info profileInfo: [String: AnyObject]) {
+    open func updateProfile(info profileInfo: [String: AnyObject]) {
         
         let me = NFSpotifyProfile.me
         
@@ -112,6 +115,12 @@ extension NFSpotifyProfile {
         me.product = profileInfo["product"] as? String
         me.type = profileInfo["type"] as? String
         me.uri = profileInfo["uri"] as? String
+        
+        if let profileCacheKey = self.profileCacheKey {
+            let archivedProfile = NSKeyedArchiver.archivedData(withRootObject: me)
+            UserDefaults.standard.set(archivedProfile, forKey: profileCacheKey)
+            UserDefaults.standard.synchronize()
+        }
     }
 }
 
@@ -119,7 +128,7 @@ extension NFSpotifyProfile {
     
     // MARK: - File Controls
     
-    func loadFromDisk() -> Bool {
+    open func loadFromDisk() -> Bool {
         
         if let userData = UserDefaults.standard.object(forKey: "SpotifyProfileCacheKey") as? Data, let userProfile = NSKeyedUnarchiver.unarchiveObject(with: userData) as? NFSpotifyProfile {
             
@@ -129,11 +138,43 @@ extension NFSpotifyProfile {
         return false
     }
     
-    func saveToDisk() -> Bool {
+    open func saveToDisk() -> Bool {
         
         let archived = NSKeyedArchiver.archivedData(withRootObject: self)
         UserDefaults.standard.set(archived, forKey: "")
         
         return UserDefaults.standard.synchronize()
+    }
+}
+
+extension NFSpotifyProfile {
+    
+    open func getProfile(withAccessToken token: String, completion: ((_ profileInfo: [String: AnyObject]?, _ error: Error?) -> Void)?) {
+        
+        let spotifyHeaders = ["Accept": "application/json", "Authorization": "Bearer \(token)"]
+        let profileURL = NFBaseURLSpotify + "me"
+        
+        Alamofire.request(profileURL, method: .get, headers: spotifyHeaders).responseJSON { (response) in
+            
+            if response.result.isSuccess, let profileInfo = response.result.value as? [String: AnyObject] {
+                
+                print("\nSpotify profile info: \(profileInfo)")
+
+                if profileInfo["error"] == nil {
+                    self.updateProfile(info: profileInfo)
+                    
+                    completion?(profileInfo, nil)
+                }else{
+                    if let errMsgInfo = profileInfo["error"] as? [String: AnyObject], let errMsg = errMsgInfo["message"] as? String {
+                        let error = NFSpotifyOAuth.createCustomError(errorMessage: "")
+                        completion?(nil, error)
+                    }else{
+                        completion?(nil, response.result.error)
+                    }
+                }
+            }else{
+                completion?(nil, response.result.error)
+            }
+        }
     }
 }
