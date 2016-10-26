@@ -11,23 +11,23 @@ import Alamofire
 
 open class NFSpotifyProfile: NSObject, NSCoding {
     
-    static let me = NFSpotifyProfile()
+    static public let me = NFSpotifyProfile()
     
     // MARK: - Declarations
     
-    var id: String!
-    var birthdate: String!
-    var country: String!
-    var display_name: String!
-    var email: String!
-    var href: String!
-    var followers: Int = 0
-    var image_url: String!
-    var product: String!
-    var type: String!
-    var uri: String!
+    open var id: String!
+    open var birthdate: String!
+    open var country: String!
+    open var display_name: String!
+    open var email: String!
+    open var href: String!
+    open var followers: Int = 0
+    open var image_url: String!
+    open var product: String!
+    open var type: String!
+    open var uri: String!
     
-    var profileCacheKey: String!
+    open var profileCacheKey: String!
     
     // MARK: - Initializers
     
@@ -89,9 +89,9 @@ open class NFSpotifyProfile: NSObject, NSCoding {
     }
 }
 
+// MARK: - Controls
+
 extension NFSpotifyProfile {
-    
-    // MARK: - Controls
     
     open func updateProfile(info profileInfo: [String: AnyObject]) {
         
@@ -124,9 +124,9 @@ extension NFSpotifyProfile {
     }
 }
 
+// MARK: - File Controls
+
 extension NFSpotifyProfile {
-    
-    // MARK: - File Controls
     
     open func loadFromDisk() -> Bool {
         

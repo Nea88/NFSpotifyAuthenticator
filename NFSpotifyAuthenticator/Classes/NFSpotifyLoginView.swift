@@ -12,7 +12,7 @@ import WebKit
 
 public protocol NFSpotifyLoginViewDelegate: NSObjectProtocol {
     
-    func spotifyLoginView(_ view: NFSpotifyLoginView, didLoginWithAccessToken aToken: String, tokenObject tObject: [String: AnyObject])
+    func spotifyLoginView(_ view: NFSpotifyLoginView, didLoginWithTokenObject tObject: NFSpotifyToken)
     func spotifyLoginView(_ view: NFSpotifyLoginView, didFailWithError error: Error?)
 }
 
@@ -196,10 +196,10 @@ extension NFSpotifyLoginView: WKNavigationDelegate {
             return delegate.spotifyLoginView(self, didFailWithError: error)
         }
         
-        NFSpotifyOAuth.shared.accessTokenFromAccessCode("access-code") { (accessToken, tokenObject, error) in
+        NFSpotifyOAuth.shared.accessTokenFromAccessCode("access-code") { (tokenObject, error) in
             
-            if let accessToken = accessToken, let tokenObject = tokenObject {
-                self.delegate.spotifyLoginView(self, didLoginWithAccessToken: accessToken, tokenObject: tokenObject)
+            if let tokenObject = tokenObject, let accessToken = tokenObject.token {
+                self.delegate.spotifyLoginView(self, didLoginWithTokenObject: tokenObject)
             }else if let error = error {
                 self.delegate.spotifyLoginView(self, didFailWithError: error)
             }else{

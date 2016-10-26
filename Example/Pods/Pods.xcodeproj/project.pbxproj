@@ -33,6 +33,7 @@
 		E1F583CB4A68A928CD197250AA752926 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C037B4034EDA3D7955BC5E4E9D9D6 /* TaskDelegate.swift */; };
 		E2A1C34237B4E928E5F85C097F4C2551 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBF1EED873F61C6D46CE37FA5C39D3 /* DispatchQueue+Alamofire.swift */; };
 		E59BF19C0AFA68B741552319FC478C7B /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8AA5F9EDED0A0BDDE7E830BF4AEE0 /* NetworkReachabilityManager.swift */; };
+		F5936AB81DC112BB0024D210 /* NFSpotifyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5936AB71DC112BB0024D210 /* NFSpotifyToken.swift */; };
 		F5D8510B1DBFBB4D00207EB5 /* NFSpotifyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D851071DBFBB4D00207EB5 /* NFSpotifyConstants.swift */; };
 		F5D8510C1DBFBB4D00207EB5 /* NFSpotifyLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D851081DBFBB4D00207EB5 /* NFSpotifyLoginView.swift */; };
 		F5D8510D1DBFBB4D00207EB5 /* NFSpotifyOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D851091DBFBB4D00207EB5 /* NFSpotifyOAuth.swift */; };
@@ -111,6 +112,7 @@
 		E4332A8501D73DD6B57D91A1FFE8564D /* Pods-NFSpotifyAuthenticator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NFSpotifyAuthenticator_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E5A8AA5F9EDED0A0BDDE7E830BF4AEE0 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		E6F34CCF86067ED508C12C676E298C69 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		F5936AB71DC112BB0024D210 /* NFSpotifyToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFSpotifyToken.swift; sourceTree = "<group>"; };
 		F5D851071DBFBB4D00207EB5 /* NFSpotifyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFSpotifyConstants.swift; sourceTree = "<group>"; };
 		F5D851081DBFBB4D00207EB5 /* NFSpotifyLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFSpotifyLoginView.swift; sourceTree = "<group>"; };
 		F5D851091DBFBB4D00207EB5 /* NFSpotifyOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFSpotifyOAuth.swift; sourceTree = "<group>"; };
@@ -256,10 +258,11 @@
 		70F89DA61CDB1213538336F2FB86090E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F5D851071DBFBB4D00207EB5 /* NFSpotifyConstants.swift */,
-				F5D851081DBFBB4D00207EB5 /* NFSpotifyLoginView.swift */,
+				F5936AB71DC112BB0024D210 /* NFSpotifyToken.swift */,
 				F5D851091DBFBB4D00207EB5 /* NFSpotifyOAuth.swift */,
 				F5D8510A1DBFBB4D00207EB5 /* NFSpotifyProfile.swift */,
+				F5D851071DBFBB4D00207EB5 /* NFSpotifyConstants.swift */,
+				F5D851081DBFBB4D00207EB5 /* NFSpotifyLoginView.swift */,
 				F5D8510F1DBFBB8800207EB5 /* NFSpotifyViewController.swift */,
 			);
 			path = Classes;
@@ -466,6 +469,7 @@
 				F5D8510C1DBFBB4D00207EB5 /* NFSpotifyLoginView.swift in Sources */,
 				F5D851101DBFBB8800207EB5 /* NFSpotifyViewController.swift in Sources */,
 				F5D8510E1DBFBB4D00207EB5 /* NFSpotifyProfile.swift in Sources */,
+				F5936AB81DC112BB0024D210 /* NFSpotifyToken.swift in Sources */,
 				F5D8510B1DBFBB4D00207EB5 /* NFSpotifyConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

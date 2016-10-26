@@ -19,6 +19,8 @@ public class NFSpotifyOAuth: NSObject {
     public var redirectURI: String!
     public var userDefaultKey: String!
 
+    public var tokenObject: NFSpotifyToken!
+    
     private
     override init() {
         super.init()
@@ -42,7 +44,7 @@ public class NFSpotifyOAuth: NSObject {
 
 extension NFSpotifyOAuth {
     
-    public func accessTokenFromAccessCode(_ code: String, completion: ((_ accessToken: String?, _ tokenObject: [String: AnyObject]?, _ error: Error?) -> Void)? = nil) {
+    public func accessTokenFromAccessCode(_ code: String, completion: ((_ tokenObject: NFSpotifyToken?, _ error: Error?) -> Void)? = nil) {
         
         guard let clientID = clientID, let clientSecret = clientSecret, let redirectURI = redirectURI else { return }
         
@@ -50,33 +52,31 @@ extension NFSpotifyOAuth {
         
         Alamofire.request(NFSpotifyAutorizationCodeURL, method: .post, parameters: parameters).responseJSON { (response) in
             
-            guard let tokenObject = response.result.value as? [String: AnyObject] else { return }
+            guard let tokenInfo = response.result.value as? [String: AnyObject] else { return }
             
-            if tokenObject["error"] == nil {
+            if tokenInfo["error"] == nil {
+                var accessTokenCreds: [String: AnyObject] = tokenInfo
                 
-                print("new access token: \(tokenObject)")
-                var accessTokenCreds: [String: AnyObject] = tokenObject
-                
-                if let expires_in = tokenObject["expires_in"]?.doubleValue {
+                if let expires_in = tokenInfo["expires_in"]?.doubleValue {
                     let expiryDate = Date(timeIntervalSinceNow: expires_in)
                     accessTokenCreds["expiryDate"] = expiryDate as AnyObject
                 }
                 
+                self.tokenObject = NFSpotifyToken(tokenInfo: accessTokenCreds)
                 if let key = self.userDefaultKey {
-                    let archivedCreds = NSKeyedArchiver.archivedData(withRootObject: accessTokenCreds)
+                    let archivedCreds = NSKeyedArchiver.archivedData(withRootObject: self.tokenObject)
                     UserDefaults.standard.set(archivedCreds, forKey: key)
                     UserDefaults.standard.synchronize()
                 }
                 
-                let accessToken = tokenObject["access_token"] as? String
-                completion?(accessToken, tokenObject, nil)
+                completion?(self.tokenObject, nil)
             }else{
-                self.processError(responseData: tokenObject, error: response.result.error, completion: completion)
+                self.processError(responseData: tokenInfo, error: response.result.error, completion: completion)
             }
         }
     }
     
-    public func renewAccessToken(fromRefreshToken token: String, completion: ((_ accessToken: String?, _ tokenObject: [String: AnyObject]?, _ error: Error?) -> Void)? = nil) {
+    public func renewAccessToken(fromRefreshToken token: String, completion: ((_ tokenObject: NFSpotifyToken?, _ error: Error?) -> Void)? = nil) {
         
         guard let clientID = clientID, let clientSecret = clientSecret, let redirectURI = redirectURI else { return }
         
@@ -84,49 +84,50 @@ extension NFSpotifyOAuth {
         
         Alamofire.request(NFSpotifyAutorizationTokenExchangeURL, method: .post, parameters: parameters).responseJSON { (response) in
             
-            guard let tokenObject = response.result.value as? [String: AnyObject] else { return }
+            guard let tokenInfo = response.result.value as? [String: AnyObject] else { return }
             
-            if tokenObject["error"] == nil {
+            if tokenInfo["error"] == nil {
+                var accessTokenCreds: [String: AnyObject] = tokenInfo
                 
-                print("renewed access token: \(tokenObject)")
-                var accessTokenCreds: [String: AnyObject] = tokenObject
-                
-                if let expires_in = tokenObject["expires_in"]?.doubleValue {
+                if let expires_in = tokenInfo["expires_in"]?.doubleValue {
                     let expiryDate = Date(timeIntervalSinceNow: expires_in)
                     accessTokenCreds["expiryDate"] = expiryDate as AnyObject
                 }
                 
+                if let tokenObject = self.tokenObject {
+                    tokenObject.updateToken(tokenInfo: accessTokenCreds)
+                }
+                
                 if let key = self.userDefaultKey {
-                    let archivedCreds = NSKeyedArchiver.archivedData(withRootObject: accessTokenCreds)
+                    let archivedCreds = NSKeyedArchiver.archivedData(withRootObject: self.tokenObject)
                     UserDefaults.standard.set(archivedCreds, forKey: key)
                     UserDefaults.standard.synchronize()
                 }
                 
-                let accessToken = tokenObject["access_token"] as? String
-                completion?(accessToken, tokenObject, nil)
+                completion?(self.tokenObject, nil)
             }else{
-                self.processError(responseData: tokenObject, error: response.result.error, completion: completion)
+                self.processError(responseData: tokenInfo, error: response.result.error, completion: completion)
             }
         }
     }
     
-    private func processError(responseData response: [String: AnyObject], error: Error?, completion: ((_ accessToken: String?, _ tokenObject: [String: AnyObject]?, _ error: Error?) -> Void)? = nil) {
+    private func processError(responseData response: [String: AnyObject], error: Error?, completion: ((_ tokenObject: NFSpotifyToken?, _ error: Error?) -> Void)? = nil) {
         
         if let errorInfo = response["error"] as? [String: AnyObject], let code = errorInfo["code"]?.integerValue, let message = ["message"] as? String {
             
             let error = NFSpotifyOAuth.createCustomError(code: code, errorMessage: message)
             
             print("renew access token error: \(error)")
-            completion?(nil, nil, error)
+            completion?(nil, error)
         }else if let error = error {
             
             print("renew access token error: \(error)")
-            completion?(nil, nil, error)
+            completion?(nil, error)
         }else{
             let error = NFSpotifyOAuth.createCustomError(errorMessage: "Unknown Error")
             
             print("renew access token error: \(error)")
-            completion?(nil, nil, error)
+            completion?(nil, error)
         }
     }
 }
