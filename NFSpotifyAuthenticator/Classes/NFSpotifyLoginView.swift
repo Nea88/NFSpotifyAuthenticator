@@ -27,6 +27,8 @@ public class NFSpotifyLoginView: UIView {
     
     public weak var delegate: NFSpotifyLoginViewDelegate!
     
+    public var animationDuration: TimeInterval = 0.33
+    
     // MARK: - Initializers
     
     private
@@ -166,13 +168,36 @@ extension NFSpotifyLoginView {
     }
 }
 
+// MARK: - Animation
+
+extension NFSpotifyLoginView {
+    
+    public func show(isAnimated: Bool = true) {
+        isHidden = false
+        transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+        
+        UIView.animate(withDuration: animationDuration) {
+            self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+    }
+    
+    public func hide(isAnimted: Bool = true) {
+        
+        UIView.animate(withDuration: animationDuration, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+        }) { (isFinished) in
+            self.isHidden = true
+        }
+    }
+}
+
 // MARK: - Controls
 
 extension NFSpotifyLoginView {
     
     func closeButtonAction(_ sender: UIButton) {
         
-        
+        hide()
     }
 }
 
