@@ -25,6 +25,7 @@ open class NFSpotifyViewController: UIViewController {
         
         loadView()
         prepareController()
+        prepareControls()
     }
     
     // MARK: - UI
@@ -98,7 +99,15 @@ open class NFSpotifyViewController: UIViewController {
         
         let cnclButtonHConstraint = NSLayoutConstraint(item: cancelButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 40)
         cancelButton.addConstraint(cnclButtonHConstraint)
-
+    }
+    
+    private func prepareControls() {
+        
+        connectButton.addTarget(self, action: #selector(self.connectButtonAction(sender:)), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(self.cancelButtonAction(sender:)), for: .touchUpInside)
+        
+        connectButton.backgroundColor = .green
+        cancelButton.backgroundColor = .red
     }
     
     private func pinViewToSelf(view v: UIView) {
@@ -111,5 +120,12 @@ open class NFSpotifyViewController: UIViewController {
         view.addConstraints([top, left, bottom, right])
     }
     
+    func connectButtonAction(sender: UIButton) {
+        
+    }
     
+    func cancelButtonAction(sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }
