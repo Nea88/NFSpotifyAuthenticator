@@ -26,18 +26,13 @@ public class NFSpotifyOAuth: NSObject {
         super.init()
     }
     
-    public
-    convenience init(clientID id: String, clientSecret secret: String, redirectURI uri: String, userDefaultKey key: String! = nil) {
-        self.init()
+    public func setClientId(_ id: String, clientSecret secret: String, redirectURI uri: String, userDefaultKey key: String! = nil) {
         
-        let shared = NFSpotifyOAuth.shared
-        
-        shared.clientID = id
-        shared.clientSecret = secret
-        shared.redirectURI = uri
-        shared.userDefaultKey = key
+        clientID = id
+        clientSecret = secret
+        redirectURI = uri
+        userDefaultKey = key
     }
-    
 }
 
 // MARK: - Requests
@@ -52,7 +47,10 @@ extension NFSpotifyOAuth {
         
         Alamofire.request(NFSpotifyAutorizationCodeURL, method: .post, parameters: parameters).responseJSON { (response) in
             
-            guard let tokenInfo = response.result.value as? [String: AnyObject] else { return }
+            guard let tokenInfo = response.result.value as? [String: AnyObject] else {
+                completion?(nil, response.result.error)
+                
+                return }
             
             if tokenInfo["error"] == nil {
                 var accessTokenCreds: [String: AnyObject] = tokenInfo

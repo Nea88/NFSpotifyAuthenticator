@@ -55,7 +55,7 @@ public class NFSpotifyLoginView: UIView {
         backgroundColor = .clear
     }
     
-    convenience init(frame: CGRect, scopes s: [String], delegate d: NFSpotifyLoginViewDelegate) {
+    convenience public init(frame: CGRect, scopes s: [String], delegate d: NFSpotifyLoginViewDelegate) {
         self.init(frame: frame)
         
         scopes = s
@@ -228,7 +228,18 @@ extension NFSpotifyLoginView: WKNavigationDelegate {
             return delegate.spotifyLoginView(self, didFailWithError: error)
         }
         
-        NFSpotifyOAuth.shared.accessTokenFromAccessCode("access-code") { (tokenObject, error) in
+        guard let queryString = url.query else {
+            let error = NFSpotifyOAuth.createCustomError(errorMessage: "No generated access code")
+            return self.delegate.spotifyLoginView(self, didFailWithError: error)
+        }
+        
+        let components = queryString.components(separatedBy: "=")
+        guard let accessCode = components.last else {
+            let error = NFSpotifyOAuth.createCustomError(errorMessage: "No generated access code")
+            return self.delegate.spotifyLoginView(self, didFailWithError: error)
+        }
+        
+        NFSpotifyOAuth.shared.accessTokenFromAccessCode(accessCode) { (tokenObject, error) in
             
             if let tokenObject = tokenObject, let accessToken = tokenObject.token {
                 self.delegate.spotifyLoginView(self, didLoginWithTokenObject: tokenObject)
