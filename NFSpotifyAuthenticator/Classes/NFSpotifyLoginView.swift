@@ -26,8 +26,12 @@ public class NFSpotifyLoginView: UIView {
     fileprivate var scopes: [String] = []
     
     public weak var delegate: NFSpotifyLoginViewDelegate!
-    
     public var animationDuration: TimeInterval = 0.33
+    public var cornerRadius: CGFloat = 4.0 {
+        didSet {
+            wkWebView.layer.cornerRadius = cornerRadius
+        }
+    }
     
     // MARK: - Initializers
     
@@ -48,6 +52,7 @@ public class NFSpotifyLoginView: UIView {
     override public func awakeFromNib() {
         super.awakeFromNib()
         
+        backgroundColor = .clear
     }
     
     convenience init(frame: CGRect, scopes s: [String], delegate d: NFSpotifyLoginViewDelegate) {
@@ -61,8 +66,6 @@ public class NFSpotifyLoginView: UIView {
         
         prepareWebLoginView(withFrame: frame)
         prepareCloseButton(withBaseFrame: frame)
-        
-        closeButton.backgroundColor = .green // Temp
         
         guard let redirectURI = NFSpotifyOAuth.shared.redirectURI else { return }
         guard let accessCodeAuthURL = accessCodeRequestOAuthURL(forRedirectURI: redirectURI) else { return }
@@ -89,6 +92,9 @@ extension NFSpotifyLoginView {
         let webFrame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         wkWebView = WKWebView(frame: webFrame, configuration: configuration)
         addSubview(wkWebView)
+        
+        wkWebView.layer.cornerRadius = cornerRadius
+        
         pinViewToSelf(view: wkWebView)
         
         wkWebView.navigationDelegate = self
@@ -110,15 +116,16 @@ extension NFSpotifyLoginView {
         
         closeButton.addConstraints([width, height])
         
+        closeButton.backgroundColor = .green // Temp
         closeButton.addTarget(self, action: #selector(self.closeButtonAction(_:)), for: .touchUpInside)
     }
     
     fileprivate func pinViewToSelf(view: UIView) {
         
         let top = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 10)
-        let left = NSLayoutConstraint(item: view, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: -10)
+        let left = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: -10)
         let bottom = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -10)
-        let right = NSLayoutConstraint(item: view, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 10)
+        let right = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 10)
         
         addConstraints([top, left, bottom, right])
     }
