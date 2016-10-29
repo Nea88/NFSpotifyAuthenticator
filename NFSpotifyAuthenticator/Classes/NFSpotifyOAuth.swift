@@ -117,6 +117,11 @@ extension NFSpotifyOAuth {
             
             print("renew access token error: \(error)")
             completion?(nil, error)
+        }else if let errorInfo = response["error"] as? String, let errorDesc = response["error_description"] as? String {
+            let error = NFSpotifyOAuth.createCustomError(userInfo: ["error": errorInfo, "description": errorDesc])
+            
+            print("renew access token error: \(response)")
+            completion?(nil, error)
         }else if let error = error {
             
             print("renew access token error: \(error)")
