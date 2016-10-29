@@ -1,9 +1,9 @@
 {
   "name": "NFSpotifyAuthenticator",
   "version": "0.1.0",
-  "summary": "A short description of NFSpotifyAuthenticator.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/NFSpotifyAuthenticator",
+  "summary": "Spotify authenticator using WebOAuth. Authorization level is \"Authorization Code\"",
+  "description": "Spotify Authenticator using WebOAuth that won't require SDK. Authentication conforms to 'Authorization Code' which gives us accesstoken and a refresh token for spotify streaming.",
+  "homepage": "https://github.com/nferocious76/NFSpotifyAuthenticator",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,11 @@
     "Neil Francis Ramirez Hipona": "nferocious76@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/NFSpotifyAuthenticator.git",
+    "git": "https://github.com/nferocious76/NFSpotifyAuthenticator.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.3"
   },
   "source_files": "NFSpotifyAuthenticator/Classes/**/*",
   "dependencies": {
