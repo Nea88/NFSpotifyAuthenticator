@@ -36,12 +36,6 @@ open class NFSpotifyProfile: NSObject, NSCoding {
         super.init()
     }
     
-    convenience public init(profileInfo: [String: AnyObject]) {
-        self.init()
-        
-        updateProfile(info: profileInfo)
-    }
-    
     required convenience public init?(coder aDecoder: NSCoder) {
         guard let i = aDecoder.decodeObject(forKey: "id") as? String else { return nil }
         
@@ -71,20 +65,18 @@ open class NFSpotifyProfile: NSObject, NSCoding {
     
     
     public func encode(with aCoder: NSCoder) {
-        
-        let me = NFSpotifyProfile.me
-        
-        aCoder.encode(me.id, forKey: "id")
-        aCoder.encode(me.birthdate, forKey: "birthdate")
-        aCoder.encode(me.country, forKey: "country")
-        aCoder.encode(me.display_name, forKey: "display_name")
-        aCoder.encode(me.email, forKey: "email")
-        aCoder.encode(me.href, forKey: "href")
-        aCoder.encode(me.followers, forKey: "followers")
-        aCoder.encode(me.image_url, forKey: "image_url")
-        aCoder.encode(me.product, forKey: "product")
-        aCoder.encode(me.type, forKey: "type")
-        aCoder.encode(me.uri, forKey: "uri")
+
+        aCoder.encode(id, forKey: "id")
+        aCoder.encode(birthdate, forKey: "birthdate")
+        aCoder.encode(country, forKey: "country")
+        aCoder.encode(display_name, forKey: "display_name")
+        aCoder.encode(email, forKey: "email")
+        aCoder.encode(href, forKey: "href")
+        aCoder.encode(followers, forKey: "followers")
+        aCoder.encode(image_url, forKey: "image_url")
+        aCoder.encode(product, forKey: "product")
+        aCoder.encode(type, forKey: "type")
+        aCoder.encode(uri, forKey: "uri")
         
     }
 }
@@ -93,31 +85,29 @@ open class NFSpotifyProfile: NSObject, NSCoding {
 
 extension NFSpotifyProfile {
     
-    open func updateProfile(info profileInfo: [String: AnyObject]) {
+    public func updateProfile(info profileInfo: [String: AnyObject]) {
         
-        let me = NFSpotifyProfile.me
-        
-        me.id = profileInfo["id"] as? String
-        me.birthdate = profileInfo["birthdate"] as? String
-        me.country = profileInfo["country"] as? String
-        me.display_name = profileInfo["display_name"] as? String
-        me.email = profileInfo["email"] as? String
-        me.href = profileInfo["href"] as? String
+        id = profileInfo["id"] as? String
+        birthdate = profileInfo["birthdate"] as? String
+        country = profileInfo["country"] as? String
+        display_name = profileInfo["display_name"] as? String
+        email = profileInfo["email"] as? String
+        href = profileInfo["href"] as? String
         
         if let followersInfo = profileInfo["followers"] as? [String: AnyObject], let followerCount = followersInfo["total"]?.integerValue {
-            me.followers = followerCount
+            followers = followerCount
         }
         
         if let images = profileInfo["images"] as? [[String: AnyObject]], let image = images.first, let imageURL = image["url"] as? String {
-            me.image_url = imageURL
+            image_url = imageURL
         }
         
-        me.product = profileInfo["product"] as? String
-        me.type = profileInfo["type"] as? String
-        me.uri = profileInfo["uri"] as? String
+        product = profileInfo["product"] as? String
+        type = profileInfo["type"] as? String
+        uri = profileInfo["uri"] as? String
         
         if let profileCacheKey = self.profileCacheKey {
-            let archivedProfile = NSKeyedArchiver.archivedData(withRootObject: me)
+            let archivedProfile = NSKeyedArchiver.archivedData(withRootObject: self)
             UserDefaults.standard.set(archivedProfile, forKey: profileCacheKey)
             UserDefaults.standard.synchronize()
         }
@@ -128,7 +118,7 @@ extension NFSpotifyProfile {
 
 extension NFSpotifyProfile {
     
-    open func loadFromDisk() -> Bool {
+    public func loadFromDisk() -> Bool {
         
         if let userData = UserDefaults.standard.object(forKey: "SpotifyProfileCacheKey") as? Data, let userProfile = NSKeyedUnarchiver.unarchiveObject(with: userData) as? NFSpotifyProfile {
             
@@ -138,7 +128,7 @@ extension NFSpotifyProfile {
         return false
     }
     
-    open func saveToDisk() -> Bool {
+    public func saveToDisk() -> Bool {
         
         let archived = NSKeyedArchiver.archivedData(withRootObject: self)
         UserDefaults.standard.set(archived, forKey: "")
@@ -149,7 +139,7 @@ extension NFSpotifyProfile {
 
 extension NFSpotifyProfile {
     
-    open func getProfile(withAccessToken token: String, completion: ((_ profileInfo: [String: AnyObject]?, _ error: Error?) -> Void)?) {
+    public func getProfile(withAccessToken token: String, completion: ((_ profileInfo: [String: AnyObject]?, _ error: Error?) -> Void)?) {
         
         let spotifyHeaders = ["Accept": "application/json", "Authorization": "Bearer \(token)"]
         let profileURL = NFBaseURLSpotify + "me"
