@@ -1,19 +1,24 @@
 PODS:
   - Alamofire (4.0.1)
-  - NFSpotifyAuthenticator (0.1.0):
-    - Alamofire (~> 4.0.1)
+  - NFSpotifyAuthenticator (0.1.1):
+    - Alamofire
 
 DEPENDENCIES:
+  - Alamofire
   - NFSpotifyAuthenticator (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
 
 EXTERNAL SOURCES:
   NFSpotifyAuthenticator:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  NFSpotifyAuthenticator: 835477648936f521e956d609711e9c2a8c8c7a51
+  NFSpotifyAuthenticator: 272dcef7a16fc4f33d83b1a2c9954444f47ccf68
 
-PODFILE CHECKSUM: 4ea36bc7449b783526e6722dc899278d9973ff07
+PODFILE CHECKSUM: 8ee037122adc983a45f54a2b2a76b10484bac180
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.9.1

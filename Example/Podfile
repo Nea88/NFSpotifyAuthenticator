@@ -1,6 +1,6 @@
 use_frameworks!
 target 'NFSpotifyAuthenticator_Tests' do
   pod 'NFSpotifyAuthenticator', :path => '../'
-  
+  pod 'Alamofire'
   
 end

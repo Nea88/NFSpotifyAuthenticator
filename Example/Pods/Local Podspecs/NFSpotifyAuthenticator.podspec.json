@@ -1,6 +1,6 @@
 {
   "name": "NFSpotifyAuthenticator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "Spotify authenticator using WebOAuth. Authorization level is \"Authorization Code\"",
   "description": "Spotify Authenticator using WebOAuth that won't require SDK. Authentication conforms to 'Authorization Code' which gives us accesstoken and a refresh token for spotify streaming.",
   "homepage": "https://github.com/nferocious76/NFSpotifyAuthenticator",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/nferocious76/NFSpotifyAuthenticator.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "9.3"
@@ -21,7 +21,7 @@
   "source_files": "NFSpotifyAuthenticator/Classes/**/*",
   "dependencies": {
     "Alamofire": [
-      "~> 4.0.1"
+
     ]
   }
 }
