@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02E61BB561BEE87BC373ABCD0BB14672 /* NFSpotifyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAA074EECD37B555FAE33D245B643F4 /* NFSpotifyToken.swift */; };
 		0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */; };
-		12E5B44DA1AF717D09A25A52375CD822 /* NFSpotifyAuthenticator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C0AA201F9EA3A74981F039730FB131 /* NFSpotifyAuthenticator-dummy.m */; };
 		132E0F619E4338E5D1B27E4C72076B3F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */; };
 		1945CD5D63A1C164AEAAA9A33E85571E /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */; };
 		1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */; };
 		2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */; };
 		3348166B4DABA49566FA30C29C51E813 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B03B07DFA7C8BB60693AE1DE30731E2 /* Alamofire.framework */; };
 		3571F958A3907B3A806E62D50C2550D4 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */; };
-		4CCF0CBE500E51B5E7ECBBF75F0B741B /* NFSpotifyAuthenticator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E36BAF917AD9D46738E37B0A60996492 /* NFSpotifyAuthenticator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CCF0CBE500E51B5E7ECBBF75F0B741B /* NFSpotifyAuthenticator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFE1327B0C9E298D9F00B46BEA772B60 /* NFSpotifyAuthenticator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */; };
 		5C71AF214348FCB4B98E35C33636D355 /* Pods-NFSpotifyAuthenticator_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AAB3589E100FAA341E8993A242C165 /* Pods-NFSpotifyAuthenticator_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63509EC966A0EB69888DCDF92E4DFB7E /* NFSpotifyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F35CF8100E5AAF23F6479FDD30BE9C4 /* NFSpotifyConstant.swift */; };
 		64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */; };
 		7664FD4F59A0C00866CBAE60B0A3AD64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
+		82605AB858F2E47EA85410FFAB141C50 /* NFSpotifyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36116492AA67AE58B1D0FB2069117C48 /* NFSpotifyProfile.swift */; };
 		83956E20859CDBBE7BC38ABADE0170FB /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F367F44FC87833A1792B541781BB7 /* AFError.swift */; };
 		84FCECBEAB5937686DB852AD8E47B59D /* Pods-NFSpotifyAuthenticator_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB0C0C932F7FE0F378288163CA84054 /* Pods-NFSpotifyAuthenticator_Tests-dummy.m */; };
-		85EDC7AD153AB538C61A2950B9AD9EB3 /* NFSpotifyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A44069FE9D0925BAA765DCA31C8D0D /* NFSpotifyProfile.swift */; };
 		931BBB8230A25161D5C37528A8F9FECF /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3F4F1011789493720361780A1982D /* SessionManager.swift */; };
 		933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */; };
 		98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */; };
-		A79ACAC53F2B4FD2747CA71458F6625C /* NFSpotifyLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D906A3C2DFC05E8030052FFE41F307 /* NFSpotifyLoginView.swift */; };
+		AB4249F5ED544E15BDDCEFD7E5678A6C /* NFSpotifyLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57C4B2620C013C4E0F5A0A59A7D79A6 /* NFSpotifyLoginView.swift */; };
+		AE0E26E04F501FF3D081838AE6463487 /* NFSpotifyOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B782855C9B69F746607656686D8EEC29 /* NFSpotifyOAuth.swift */; };
 		AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */; };
-		B15E737C5C56302DE95EAED03ACB5E73 /* NFSpotifyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DACDAFA2F3DEFA14A013E2D80F0F971 /* NFSpotifyToken.swift */; };
-		B592897C59CFEEA2B3284EC1B931CD0E /* NFSpotifyOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54520A0DB9861B65D4C9409EAA7E7B99 /* NFSpotifyOAuth.swift */; };
+		BAE5C20A077F7BE27E1D293BF12252E7 /* NFSpotifyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FFBD8A9BE0FBDE84F8EC23D3474425 /* NFSpotifyConstant.swift */; };
 		BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */; };
 		C15A7A4F7DC9B7C40FEE9EF3550B1318 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
 		D3D8C379C6E4FB487E5ABD6800AD7B7E /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */; };
 		D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */; };
 		E3747EC31FCCA97D75A81FC700CF7E24 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */; };
+		EC18346DECF09F1314D640DE54BA7374 /* NFSpotifyAuthenticator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2722796391C4C53DEC4FE31B7A8AC24A /* NFSpotifyAuthenticator-dummy.m */; };
 		F102E54AB1387249E11ADD3602978C65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
 		F13F2AA7F2E6D95A181CAB99B900D531 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */; };
 		F7B74645E07C39771156A1FA413B98D4 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,58 +67,58 @@
 
 /* Begin PBXFileReference section */
 		0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		08A0E6E98D8B18DD1651388F92C20C95 /* NFSpotifyAuthenticator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "NFSpotifyAuthenticator-Info.plist"; sourceTree = "<group>"; };
 		0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
-		0E8104CCFFEB7FFF802F60A1FAAF289A /* NFSpotifyAuthenticator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NFSpotifyAuthenticator.modulemap; sourceTree = "<group>"; };
+		1073FE4BDE473BBF989DD9E26D61985E /* NFSpotifyAuthenticator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NFSpotifyAuthenticator-prefix.pch"; sourceTree = "<group>"; };
 		1457D3A93E16A08E62AF19A8F4CBB6FC /* Pods-NFSpotifyAuthenticator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NFSpotifyAuthenticator_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		1F35CF8100E5AAF23F6479FDD30BE9C4 /* NFSpotifyConstant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyConstant.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyConstant.swift; sourceTree = "<group>"; };
-		222713EF4FB480C24B34F0D9A1816666 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		22AAB3589E100FAA341E8993A242C165 /* Pods-NFSpotifyAuthenticator_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NFSpotifyAuthenticator_Tests-umbrella.h"; sourceTree = "<group>"; };
-		29D906A3C2DFC05E8030052FFE41F307 /* NFSpotifyLoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyLoginView.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyLoginView.swift; sourceTree = "<group>"; };
+		2722796391C4C53DEC4FE31B7A8AC24A /* NFSpotifyAuthenticator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NFSpotifyAuthenticator-dummy.m"; sourceTree = "<group>"; };
 		2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		36116492AA67AE58B1D0FB2069117C48 /* NFSpotifyProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyProfile.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyProfile.swift; sourceTree = "<group>"; };
 		3D3D8DE03E29B8067CF274D52026C77F /* Pods-NFSpotifyAuthenticator_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuthenticator_Tests-Info.plist"; sourceTree = "<group>"; };
 		3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		4394D09AE19E5D8DB144A4955C368C60 /* NFSpotifyAuthenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NFSpotifyAuthenticator.debug.xcconfig; sourceTree = "<group>"; };
 		44B9D554B8D758DAC0A1E0C4B1A6C093 /* Pods-NFSpotifyAuthenticator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NFSpotifyAuthenticator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		4B03B07DFA7C8BB60693AE1DE30731E2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54520A0DB9861B65D4C9409EAA7E7B99 /* NFSpotifyOAuth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyOAuth.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyOAuth.swift; sourceTree = "<group>"; };
 		58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DACDAFA2F3DEFA14A013E2D80F0F971 /* NFSpotifyToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyToken.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyToken.swift; sourceTree = "<group>"; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED047C2109FD8C989F0D93F032AAA29 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		5FEB2726D8D5B1A0A657204329BCF4BD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		6207F1A1386566C3011442F410A98BEF /* NFSpotifyAuthenticator.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = NFSpotifyAuthenticator.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		74C0AA201F9EA3A74981F039730FB131 /* NFSpotifyAuthenticator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NFSpotifyAuthenticator-dummy.m"; sourceTree = "<group>"; };
-		79A9CC027A9AB824FBAF25618B248439 /* Pods_NFSpotifyAuthenticator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFSpotifyAuthenticator_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79A9CC027A9AB824FBAF25618B248439 /* Pods_NFSpotifyAuthenticator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NFSpotifyAuthenticator_Tests.framework; path = "Pods-NFSpotifyAuthenticator_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		82CF647235A66A6519C68312C124630E /* NFSpotifyAuthenticator.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = NFSpotifyAuthenticator.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		82FFBD8A9BE0FBDE84F8EC23D3474425 /* NFSpotifyConstant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyConstant.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyConstant.swift; sourceTree = "<group>"; };
+		833DCF810AFDE82FD3238EB756D8329D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		89386B487A0D26D0CF84963D878B1D4D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8CB0C0C932F7FE0F378288163CA84054 /* Pods-NFSpotifyAuthenticator_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NFSpotifyAuthenticator_Tests-dummy.m"; sourceTree = "<group>"; };
-		900A3DC20BDD67D8E554C2B1FFC6E7FA /* NFSpotifyAuthenticator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NFSpotifyAuthenticator.release.xcconfig; sourceTree = "<group>"; };
-		941A491EA0960E91C6072D0D374D498E /* NFSpotifyAuthenticator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "NFSpotifyAuthenticator-Info.plist"; sourceTree = "<group>"; };
+		96E43967C1F822598DDFC83A94AF3C0F /* NFSpotifyAuthenticator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NFSpotifyAuthenticator.release.xcconfig; sourceTree = "<group>"; };
 		98D3F4F1011789493720361780A1982D /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A31DDF318E3E03B4DEA2F1B4182A555D /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		A5055CA97EDA8253B4A6C719F9B34F30 /* NFSpotifyAuthenticator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NFSpotifyAuthenticator.modulemap; sourceTree = "<group>"; };
 		A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		AEFCC3C6E0DC05340106E5D229B01EC1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		AFE1327B0C9E298D9F00B46BEA772B60 /* NFSpotifyAuthenticator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NFSpotifyAuthenticator-umbrella.h"; sourceTree = "<group>"; };
 		B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		B782855C9B69F746607656686D8EEC29 /* NFSpotifyOAuth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyOAuth.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyOAuth.swift; sourceTree = "<group>"; };
 		B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		BAF1C44E3505329E2BED7CC9A93EA7D7 /* NFSpotifyAuthenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NFSpotifyAuthenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAF1C44E3505329E2BED7CC9A93EA7D7 /* NFSpotifyAuthenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NFSpotifyAuthenticator.framework; path = NFSpotifyAuthenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD52FBB17A93A2D602305A003158EE9A /* Pods-NFSpotifyAuthenticator_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuthenticator_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BE634450F3A2FB5167C2B19465CDD32A /* NFSpotifyAuthenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NFSpotifyAuthenticator.debug.xcconfig; sourceTree = "<group>"; };
 		C062AEF4909395393F1386A1720BB0B4 /* Pods-NFSpotifyAuthenticator_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NFSpotifyAuthenticator_Tests.modulemap"; sourceTree = "<group>"; };
 		C57326DA6A78B575F95CBAA38287100E /* Pods-NFSpotifyAuthenticator_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NFSpotifyAuthenticator_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		CAAA074EECD37B555FAE33D245B643F4 /* NFSpotifyToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyToken.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyToken.swift; sourceTree = "<group>"; };
 		DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		E36BAF917AD9D46738E37B0A60996492 /* NFSpotifyAuthenticator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NFSpotifyAuthenticator-umbrella.h"; sourceTree = "<group>"; };
 		E63F367F44FC87833A1792B541781BB7 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		E6A44069FE9D0925BAA765DCA31C8D0D /* NFSpotifyProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyProfile.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyProfile.swift; sourceTree = "<group>"; };
 		F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		F57C4B2620C013C4E0F5A0A59A7D79A6 /* NFSpotifyLoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFSpotifyLoginView.swift; path = NFSpotifyAuthenticator/Classes/NFSpotifyLoginView.swift; sourceTree = "<group>"; };
 		F5975C3EB708D7DFA07E77D6920AD3B6 /* Pods-NFSpotifyAuthenticator_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NFSpotifyAuthenticator_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		FADE958F4064F58C08ADC7CFB57973A1 /* NFSpotifyAuthenticator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NFSpotifyAuthenticator-prefix.pch"; sourceTree = "<group>"; };
 		FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +170,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		30AF5CD6EDD345A748C419D3384F5F21 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5055CA97EDA8253B4A6C719F9B34F30 /* NFSpotifyAuthenticator.modulemap */,
+				2722796391C4C53DEC4FE31B7A8AC24A /* NFSpotifyAuthenticator-dummy.m */,
+				08A0E6E98D8B18DD1651388F92C20C95 /* NFSpotifyAuthenticator-Info.plist */,
+				1073FE4BDE473BBF989DD9E26D61985E /* NFSpotifyAuthenticator-prefix.pch */,
+				AFE1327B0C9E298D9F00B46BEA772B60 /* NFSpotifyAuthenticator-umbrella.h */,
+				BE634450F3A2FB5167C2B19465CDD32A /* NFSpotifyAuthenticator.debug.xcconfig */,
+				96E43967C1F822598DDFC83A94AF3C0F /* NFSpotifyAuthenticator.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/NFSpotifyAuthenticator";
+			sourceTree = "<group>";
+		};
 		34996329E9B88DA6C1B407FD0FA33DB9 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +211,7 @@
 		8A270BE88592B41AAA021AF0E7866E16 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9D04ADD52AB777207F0CC907320EF843 /* NFSpotifyAuthenticator */,
+				D41AC217CA1A202B15CB450DAB4A4EF4 /* NFSpotifyAuthenticator */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -207,21 +222,6 @@
 				CC362FA3C7A87C2E5630BA06D8CB57BD /* Alamofire */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		9D04ADD52AB777207F0CC907320EF843 /* NFSpotifyAuthenticator */ = {
-			isa = PBXGroup;
-			children = (
-				1F35CF8100E5AAF23F6479FDD30BE9C4 /* NFSpotifyConstant.swift */,
-				29D906A3C2DFC05E8030052FFE41F307 /* NFSpotifyLoginView.swift */,
-				54520A0DB9861B65D4C9409EAA7E7B99 /* NFSpotifyOAuth.swift */,
-				E6A44069FE9D0925BAA765DCA31C8D0D /* NFSpotifyProfile.swift */,
-				5DACDAFA2F3DEFA14A013E2D80F0F971 /* NFSpotifyToken.swift */,
-				E6D75C58A07D56DF0210231945F6E51A /* Pod */,
-				FEB774A998B7696A53CD93AD8D21ABEE /* Support Files */,
-			);
-			name = NFSpotifyAuthenticator;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		CC362FA3C7A87C2E5630BA06D8CB57BD /* Alamofire */ = {
@@ -246,6 +246,7 @@
 				DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */,
 				7D02D4600E8C814A4EF1D8C7FF8FA146 /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -261,22 +262,27 @@
 			);
 			sourceTree = "<group>";
 		};
+		D41AC217CA1A202B15CB450DAB4A4EF4 /* NFSpotifyAuthenticator */ = {
+			isa = PBXGroup;
+			children = (
+				82FFBD8A9BE0FBDE84F8EC23D3474425 /* NFSpotifyConstant.swift */,
+				F57C4B2620C013C4E0F5A0A59A7D79A6 /* NFSpotifyLoginView.swift */,
+				B782855C9B69F746607656686D8EEC29 /* NFSpotifyOAuth.swift */,
+				36116492AA67AE58B1D0FB2069117C48 /* NFSpotifyProfile.swift */,
+				CAAA074EECD37B555FAE33D245B643F4 /* NFSpotifyToken.swift */,
+				F4E6B1C1F21A59E2F0F000129939D350 /* Pod */,
+				30AF5CD6EDD345A748C419D3384F5F21 /* Support Files */,
+			);
+			name = NFSpotifyAuthenticator;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		DBBD239EB7C1C83EA80124D1A53485AB /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		E6D75C58A07D56DF0210231945F6E51A /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				89386B487A0D26D0CF84963D878B1D4D /* LICENSE */,
-				82CF647235A66A6519C68312C124630E /* NFSpotifyAuthenticator.podspec */,
-				222713EF4FB480C24B34F0D9A1816666 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		E8EFE0E755993B768EC6F4E5604005AA /* Pods-NFSpotifyAuthenticator_Tests */ = {
@@ -296,19 +302,14 @@
 			path = "Target Support Files/Pods-NFSpotifyAuthenticator_Tests";
 			sourceTree = "<group>";
 		};
-		FEB774A998B7696A53CD93AD8D21ABEE /* Support Files */ = {
+		F4E6B1C1F21A59E2F0F000129939D350 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				0E8104CCFFEB7FFF802F60A1FAAF289A /* NFSpotifyAuthenticator.modulemap */,
-				74C0AA201F9EA3A74981F039730FB131 /* NFSpotifyAuthenticator-dummy.m */,
-				941A491EA0960E91C6072D0D374D498E /* NFSpotifyAuthenticator-Info.plist */,
-				FADE958F4064F58C08ADC7CFB57973A1 /* NFSpotifyAuthenticator-prefix.pch */,
-				E36BAF917AD9D46738E37B0A60996492 /* NFSpotifyAuthenticator-umbrella.h */,
-				4394D09AE19E5D8DB144A4955C368C60 /* NFSpotifyAuthenticator.debug.xcconfig */,
-				900A3DC20BDD67D8E554C2B1FFC6E7FA /* NFSpotifyAuthenticator.release.xcconfig */,
+				AEFCC3C6E0DC05340106E5D229B01EC1 /* LICENSE */,
+				6207F1A1386566C3011442F410A98BEF /* NFSpotifyAuthenticator.podspec */,
+				833DCF810AFDE82FD3238EB756D8329D /* README.md */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/NFSpotifyAuthenticator";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,7 +347,7 @@
 			buildConfigurationList = FFFD03451084280F86684EF3D74EE562 /* Build configuration list for PBXNativeTarget "NFSpotifyAuthenticator" */;
 			buildPhases = (
 				A6D3394CBA87F237DE1C9BD0919385D5 /* Headers */,
-				7F82FF49A0AB8C040B1838303BACB628 /* Sources */,
+				A389D04A59C71FF23684C66254DCCA2A /* Sources */,
 				2F5E0826708AB47111FCEF31699BD326 /* Frameworks */,
 				5EA8E140F148BA33D7008E985A0EF056 /* Resources */,
 			);
@@ -477,24 +478,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F82FF49A0AB8C040B1838303BACB628 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				12E5B44DA1AF717D09A25A52375CD822 /* NFSpotifyAuthenticator-dummy.m in Sources */,
-				63509EC966A0EB69888DCDF92E4DFB7E /* NFSpotifyConstant.swift in Sources */,
-				A79ACAC53F2B4FD2747CA71458F6625C /* NFSpotifyLoginView.swift in Sources */,
-				B592897C59CFEEA2B3284EC1B931CD0E /* NFSpotifyOAuth.swift in Sources */,
-				85EDC7AD153AB538C61A2950B9AD9EB3 /* NFSpotifyProfile.swift in Sources */,
-				B15E737C5C56302DE95EAED03ACB5E73 /* NFSpotifyToken.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		87E1CB707564E46ACA1252FF7E26DDBF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				84FCECBEAB5937686DB852AD8E47B59D /* Pods-NFSpotifyAuthenticator_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A389D04A59C71FF23684C66254DCCA2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC18346DECF09F1314D640DE54BA7374 /* NFSpotifyAuthenticator-dummy.m in Sources */,
+				BAE5C20A077F7BE27E1D293BF12252E7 /* NFSpotifyConstant.swift in Sources */,
+				AB4249F5ED544E15BDDCEFD7E5678A6C /* NFSpotifyLoginView.swift in Sources */,
+				AE0E26E04F501FF3D081838AE6463487 /* NFSpotifyOAuth.swift in Sources */,
+				82605AB858F2E47EA85410FFAB141C50 /* NFSpotifyProfile.swift in Sources */,
+				02E61BB561BEE87BC373ABCD0BB14672 /* NFSpotifyToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,38 +523,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0573ED8DC8717ABE5A3B919D2DC9E661 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				PRODUCT_MODULE_NAME = Alamofire;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		35FFECCEBDA64EBB7356472585E4815E /* Release */ = {
+		35006AE9D6D05DF8C977E78669BAE8FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */;
 			buildSettings = {
@@ -577,7 +547,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -585,10 +555,11 @@
 			};
 			name = Release;
 		};
-		ACA6B0DC104D09604E391EE50E2EB5D0 /* Release */ = {
+		58F887602EFFBB3AD7A08E9EF453DD17 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 900A3DC20BDD67D8E554C2B1FFC6E7FA /* NFSpotifyAuthenticator.release.xcconfig */;
+			baseConfigurationReference = BE634450F3A2FB5167C2B19465CDD32A /* NFSpotifyAuthenticator.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -601,7 +572,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/NFSpotifyAuthenticator/NFSpotifyAuthenticator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/NFSpotifyAuthenticator/NFSpotifyAuthenticator-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/NFSpotifyAuthenticator/NFSpotifyAuthenticator.modulemap";
 				PRODUCT_MODULE_NAME = NFSpotifyAuthenticator;
@@ -609,13 +580,43 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
+		};
+		5BEEBDF71BB1DBB66FD9FF83CF1B89B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		B0087CB4594321EF41619F3181FE120E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -670,7 +671,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -740,10 +742,11 @@
 			};
 			name = Debug;
 		};
-		CFF9E4AE06B5BCAA22A81BC6B66A9313 /* Debug */ = {
+		D6BD11272B1781657311F0EDCC53AAF5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4394D09AE19E5D8DB144A4955C368C60 /* NFSpotifyAuthenticator.debug.xcconfig */;
+			baseConfigurationReference = 96E43967C1F822598DDFC83A94AF3C0F /* NFSpotifyAuthenticator.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -756,7 +759,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/NFSpotifyAuthenticator/NFSpotifyAuthenticator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/NFSpotifyAuthenticator/NFSpotifyAuthenticator-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/NFSpotifyAuthenticator/NFSpotifyAuthenticator.modulemap";
 				PRODUCT_MODULE_NAME = NFSpotifyAuthenticator;
@@ -764,12 +767,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		DE6D5360C8D6E248AE01DA757590E80A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -862,8 +866,8 @@
 		E4A5194ABAF7A4780609E0E581DA6B54 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0573ED8DC8717ABE5A3B919D2DC9E661 /* Debug */,
-				35FFECCEBDA64EBB7356472585E4815E /* Release */,
+				5BEEBDF71BB1DBB66FD9FF83CF1B89B1 /* Debug */,
+				35006AE9D6D05DF8C977E78669BAE8FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -871,8 +875,8 @@
 		FFFD03451084280F86684EF3D74EE562 /* Build configuration list for PBXNativeTarget "NFSpotifyAuthenticator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CFF9E4AE06B5BCAA22A81BC6B66A9313 /* Debug */,
-				ACA6B0DC104D09604E391EE50E2EB5D0 /* Release */,
+				58F887602EFFBB3AD7A08E9EF453DD17 /* Debug */,
+				D6BD11272B1781657311F0EDCC53AAF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

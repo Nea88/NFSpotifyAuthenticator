@@ -16,7 +16,7 @@
     "tag": "0.1.1"
   },
   "platforms": {
-    "ios": "9.3"
+    "ios": "13"
   },
   "source_files": "NFSpotifyAuthenticator/Classes/**/*",
   "dependencies": {
