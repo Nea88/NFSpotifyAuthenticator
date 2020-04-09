@@ -215,13 +215,13 @@ extension NFSpotifyLoginView: WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         
-        print("SpotifyAuthLoginView didCommit navigation: \(webView.url ?? nil)")
+        print("SpotifyAuthLoginView didCommit navigation: \(webView.url?.absoluteString ?? "")")
         
     }
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
-        print("SpotifyAuthLoginView didFinish navigation: \(webView.url ?? nil)")
+        print("SpotifyAuthLoginView didFinish navigation: \(webView.url?.absoluteString ?? "")")
         
         guard let url = webView.url else {
             let error = NFSpotifyOAuth.createCustomError(errorMessage: "No valid address")
@@ -254,25 +254,25 @@ extension NFSpotifyLoginView: WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         
-        print("SpotifyAuthLoginView didFail navigation: \(webView.url ?? nil) -- error: \(error)")
+        print("SpotifyAuthLoginView didFail navigation: \(webView.url?.absoluteString ?? "") -- error: \(error)")
         
         delegate.spotifyLoginView(self, didFailWithError: error)
     }
     
     public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         
-        print("SpotifyAuthLoginView webViewWebContentProcessDidTerminate: \(webView.url ?? nil)")
+        print("SpotifyAuthLoginView webViewWebContentProcessDidTerminate: \(webView.url?.absoluteString ?? "")")
     }
     
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         
-        print("SpotifyAuthLoginView didReceiveServerRedirectForProvisionalNavigation navigation: \(webView.url ?? nil)")
+        print("SpotifyAuthLoginView didReceiveServerRedirectForProvisionalNavigation navigation: \(webView.url?.absoluteString ?? "")")
         
     }
     
     public func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
         
-        print("SpotifyAuthLoginView didReceiveServerRedirectForProvisionalNavigation navigation: \(webView.url ?? nil)")
+        print("SpotifyAuthLoginView didReceiveServerRedirectForProvisionalNavigation navigation: \(webView.url?.absoluteString ?? "")")
     }
     
     public func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
@@ -294,6 +294,6 @@ extension NFSpotifyLoginView: WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         
-        print("SpotifyAuthLoginView didFailProvisionalNavigation: \(webView.url ?? nil), error: \(error)")
+        print("SpotifyAuthLoginView didFailProvisionalNavigation: \(webView.url?.absoluteString ?? ""), error: \(error)")
     }
 }
