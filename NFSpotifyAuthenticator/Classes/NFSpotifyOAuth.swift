@@ -141,7 +141,7 @@ extension NFSpotifyOAuth {
     
     public class func createCustomError(withDomain domain: String = "com.nf-spotify-o-auth.error", code: Int = 4776, userInfo: [AnyHashable: Any]?) -> Error {
         
-        return NSError(domain: domain, code: code, userInfo: userInfo)
+        return NSError(domain: domain, code: code, userInfo: userInfo as! [String : Any])
     }
     
     public class func createCustomError(withDomain domain: String = "com.nf-spotify-o-auth.error", code: Int = 4776, errorMessage msg: String) -> Error {

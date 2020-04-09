@@ -202,7 +202,7 @@ extension NFSpotifyLoginView {
 
 extension NFSpotifyLoginView {
     
-    func closeButtonAction(_ sender: UIButton) {
+    @objc func closeButtonAction(_ sender: UIButton) {
         
         hide()
     }
